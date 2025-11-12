@@ -5,17 +5,19 @@ import torch.optim as optim
 from torch.utils.data import DataLoader
 from data.datasets.VitalsDataset import VitalsDataset
 
-input_dim = 12  # Number of features in the input data
-hidden_dim = 32  # Number of features in the hidden state of the LSTM
+input_dim = 13  # Number of features in the input data
+hidden_dim = 30  # Number of features in the hidden state of the LSTM
 num_layers = 2  # Number of stacked LSTM layers
 output_dim = 1  # Binary classification
 
-sequence_length = 64  # Length of each input sequence
+sequence_length = 30  # Length of each input sequence
 batch_size = 32 # Number of sequences in each batch
 learning_rate = 1e-3 # Learning rate for the optimizer
 epochs = 5 # Number of training epochs
 
-train_dataset = VitalsDataset("data/somedatahere")
+DATA_SEQUENCES = "../data_sequences"
+
+train_dataset = VitalsDataset(DATA_SEQUENCES)
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -46,4 +48,4 @@ for epoch in range(epochs):
     print(f'Epoch [{epoch+1}/{epochs}], Loss: {avg_loss:.4f}')
 
 
-torch.save(model.state_dict(), "model/delirium_lstm.pth")
+torch.save(model.state_dict(), "model/delirium_lstm_2.pth")
