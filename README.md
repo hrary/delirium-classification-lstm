@@ -4,4 +4,6 @@ This project implements a machine learning pipeline to detect and predict deliri
 
 The solution integrates with a MongoDB database storing patient sensor data and current assignments + patient statuses, running continuous inference and updating patient status in near real-time.
 
-Made by Harry Lu :3
+LSTM Model partially trained on data extracted from the MIMIC-IV Waveform Database (https://physionet.org/content/mimic4wdb/0.1.0/)
+
+Analysis model and backend made by Harry Lu :3
