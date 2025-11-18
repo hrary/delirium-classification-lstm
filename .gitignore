@@ -5,3 +5,6 @@
 /data_sequences_normal_backup/
 /data_processed_normal_backup/
 /venv/
+.idea/
+.venv/
+
